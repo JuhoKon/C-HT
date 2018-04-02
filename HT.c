@@ -1,15 +1,16 @@
 /*****************************************************************************/
 /* CT60A0220 C-ohjelmoinnin ja testauksen periaatteet 
- * Tekij‰: Juho Kontiainen
+ * Tekij√§: Juho Kontiainen
  * Opiskelijanumero: 0503209
- * P‰iv‰m‰‰r‰: 06.03.2018
- * Yhteistyˆ ja l‰hteet, nimi ja yhteistyˆn muoto: harjoitusryhmiss‰ tyˆskentely, cprogramming.com, stackoverflow, 
+ * P√§iv√§m√§√§r√§: 06.03.2018
+ * Yhteisty√∂ ja l√§hteet, nimi ja yhteisty√∂n muoto: harjoitusryhmiss√§ ty√∂skentely, cprogramming.com, stackoverflow, 
  */
 /*****************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include "nimilista.h"
 #include "tuloslista.h"
 /* Valikko. */
 int valikko(void) {
@@ -19,7 +20,7 @@ int valikko(void) {
 	printf("3) Analysoi tiedot\n");
 	printf("4) Tulosta kaikki tulostiedot\n");
 	printf("5) Tallenna kaikki tulostiedot tiedostoon\n");
-	printf("6) Tyhjenn‰ tuloslista\n");
+	printf("6) Tyhjenn√§ tuloslista\n");
 	printf("0) Lopeta\n");
 	printf("Anna valintasi: ");
 	scanf("%d", &valinta);
@@ -30,7 +31,7 @@ int main(void) {
 	Solmu *pAlku = NULL;
 	Solmu2 *pAlku2 = NULL;
 	int valinta = 1;
-	printf("T‰m‰ ohjelma tutkii nimitietoja sis‰lt‰vi‰ tiedostoja.\n");
+	printf("T√§m√§ ohjelma tutkii nimitietoja sis√§lt√§vi√§ tiedostoja.\n");
 	while (valinta !=0) {
 		valinta = valikko();
 		if (valinta == 0) {
@@ -49,10 +50,10 @@ int main(void) {
 			 pAlku2 = tyhjennatulos(pAlku2);
 		     printf("Tuloslista tyhjennetty.\n");
 		} else {
-			printf("V‰‰r‰ syˆte.\n");
+			printf("V√§√§r√§ sy√∂te.\n");
 		}
 	}
-	printf("Kiitos ohjelman k‰ytˆst‰.\n");
+	printf("Kiitos ohjelman k√§yt√∂st√§.\n");
 	return 0;
 }
 /*EOF*/
