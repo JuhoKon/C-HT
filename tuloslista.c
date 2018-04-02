@@ -1,24 +1,25 @@
 /*****************************************************************************/
 /* CT60A0220 C-ohjelmoinnin ja testauksen periaatteet 
- * Tekij‰: Juho Kontiainen
+ * Tekij√§: Juho Kontiainen
  * Opiskelijanumero: 0503209
- * P‰iv‰m‰‰r‰: 06.03.2018
- * Yhteistyˆ ja l‰hteet, nimi ja yhteistyˆn muoto: harjoitusryhmiss‰ tyˆskentely, cprogramming.com, stackoverflow, 
+ * P√§iv√§m√§√§r√§: 06.03.2018
+ * Yhteisty√∂ ja l√§hteet, nimi ja yhteisty√∂n muoto: harjoitusryhmiss√§ ty√∂skentely, cprogramming.com, stackoverflow, 
  */
 /*****************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include "nimilista.h"
 #include "tuloslista.h"
 
 void tulostakaikki(Solmu2 *pAlku2) {  /* KAIKKIEN TULOSTEN TULOSTUS */
 	Solmu2 *ptr2 = pAlku2;
 	if (ptr2 == NULL) {
-		printf("Lista on tyhj‰.\n");
+		printf("Lista on tyhj√§.\n");
 	} else {
 
-		printf("Datasetti Nimi‰ MinPit MaxPit KA Muistink‰yttˆ\n");
+		printf("Datasetti Nimi√§ MinPit MaxPit KA Muistink√§ytt√∂\n");
 		while (ptr2 != NULL) {
 
 			printf("%s      %d      %d     %d  %d  %d kB / %d%%\n", ptr2->nimi2, ptr2->rivimaara,ptr2->minpituus,
@@ -36,13 +37,13 @@ void tallennus(Solmu2 *pAlku2) {  /* Tiedostoon tallennus*/
 	FILE *tdosto2;
 	tdosto2=fopen(tnimi, "w"); 
 	if (tdosto2 == NULL) {
-		perror("Tiedostoon kirjoittaminen ep‰onnistui.");
+		perror("Tiedostoon kirjoittaminen ep√§onnistui.");
 		exit(2);
 	}
 	if (ptr2 == NULL) {
-		printf("Lista on tyhj‰.\n");
+		printf("Lista on tyhj√§.\n");
 	} else {
-		fprintf(tdosto2, "Datasetti Nimi‰ MinPit MaxPit KA Muistink‰yttˆ\n");				/* KIRJOITUS ALKAA */
+		fprintf(tdosto2, "Datasetti Nimi√§ MinPit MaxPit KA Muistink√§ytt√∂\n");				/* KIRJOITUS ALKAA */
 		while (ptr2 != NULL) {
 			fprintf(tdosto2,"%s      %d      %d     %d  %d  %d kB / %d%%\n", ptr2->nimi2, ptr2->rivimaara,ptr2->minpituus,
 			ptr2->maxpituus, ptr2->keskiarvo, ptr2->muistim, ptr2->muistip);
@@ -62,7 +63,7 @@ Solmu2* analysoi(Solmu *pAlku, Solmu2 *pAlku2) {
 	scanf("%s", nimi);
 	printf("Analysoidaan listassa olevat tiedot.\n");
 	if (ptr == NULL) {
-		printf("Lista on tyhj‰.\n");
+		printf("Lista on tyhj√§.\n");
 	} else {
 		while (ptr != NULL) {
 			if (strlen(ptr->nimi) < pienin) {
@@ -77,7 +78,7 @@ Solmu2* analysoi(Solmu *pAlku, Solmu2 *pAlku2) {
 		}
 	}
 	musage = ((30 - ((tulos/lukmr)+1)) * lukmr)/ (sizeof(Solmu)*lukmr);
-	printf("Datasetti Nimi‰ MinPit MaxPit KA Muistink‰yttˆ\n");
+	printf("Datasetti Nimi√§ MinPit MaxPit KA Muistink√§ytt√∂\n");
 	printf("%s      %d      %d     %d  %.0f  %.0f kB / %.0f%%\n", nimi, lukmr, pienin, suurin, round((tulos/lukmr)), floor((sizeof(Solmu)*lukmr) / 1000), ceil((1-musage)*100));
 
 	/* MUISTIN VARAUS*/
@@ -85,7 +86,7 @@ Solmu2* analysoi(Solmu *pAlku, Solmu2 *pAlku2) {
 	Solmu2 *ptr2, *ptrUusi2;
 
 	if ((ptrUusi2=(Solmu2*)malloc(sizeof(Solmu2))) == NULL) {
-		printf("Muistin varaus ep‰onnistui.");
+		printf("Muistin varaus ep√§onnistui.");
 		exit(1);
 	}
 	/* SOLMUN ALUSTUS */
@@ -99,7 +100,7 @@ Solmu2* analysoi(Solmu *pAlku, Solmu2 *pAlku2) {
 	ptrUusi2 -> muistim   = floor((sizeof(Solmu)*lukmr)) / 1000 ;
 	ptrUusi2 -> pNext2 = NULL;
 
-	/*UUDEN ALKION LISƒYS LISTAAN*/
+	/*UUDEN ALKION LIS√ÑYS LISTAAN*/
 	
 	if (pAlku2 == NULL) {
 		pAlku2 = ptrUusi2;
