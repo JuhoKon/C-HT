@@ -7,7 +7,7 @@
  */
 /*****************************************************************************/
 #ifndef tuloslista_included
-#define tulosista_included
+#define tuloslista_included
 struct Node2 {
 	int keskiarvo, minpituus, maxpituus, muistip, rivimaara, muistim;
 	char nimi2[30];
